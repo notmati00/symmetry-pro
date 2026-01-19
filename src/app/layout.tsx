@@ -20,20 +20,51 @@ export const metadata: Metadata = {
   keywords: ["symmetry", "facial symmetry", "body symmetry", "posture", "facial exercises", "lookmaxing", "jawline", "cheek exercises", "posture correction", "fitness", "wellness", "self-improvement"],
   authors: [{ name: "Symmetry Pro Team" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/icon-192x192.png",
+    apple: "/icon-152x152.png",
   },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Symmetry Pro - Professional Symmetry Training",
     description: "Achieve your best look with professional facial and body symmetry training",
-    url: "https://chat.z.ai",
+    url: "https://notmati00.github.io/symmetry-pro",
     siteName: "Symmetry Pro",
     type: "website",
+    images: [
+      {
+        url: "/icon-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Symmetry Pro Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Symmetry Pro - Professional Symmetry Training",
     description: "Transform your appearance with guided symmetry exercises and progress tracking",
+    images: ["/icon-512x512.png"],
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Symmetry Pro",
+    startupImage: ["/icon-192x192.png"],
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: false,
+  },
+  themeColor: "#1a1a1a",
+  applicationName: "Symmetry Pro",
+  generator: "Next.js",
 };
 
 export default function RootLayout({

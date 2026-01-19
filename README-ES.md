@@ -11,13 +11,6 @@ Una aplicación profesional de entrenamiento de simetría facial y corporal con 
 - 💾 **Persistencia Local** - Todos los datos guardados en localStorage
 - 🎬 **Animaciones SVG** - Demostraciones visuales de todos los ejercicios
 - 📱 **Responsive** - Funciona en móvil, tablet y escritorio
-- 📲 **Progressive Web App (PWA)** - Instalable como app nativa
-  - ✅ Instalable desde navegador Chrome (Android)
-  - ✅ Instalable desde Safari (iOS)
-  - ✅ Ícono en pantalla de inicio
-  - ✅ Funciona offline con service worker
-  - ✅ Atajos rápidos desde pantalla de inicio
-  - ✅ Sin conexión a internet necesaria después de instalar
 
 ## 🚀 Cómo Ejecutar
 
@@ -121,40 +114,6 @@ symmetry-pro/
 - 🇪🇸 **Español** - Completo
 
 El idioma se puede cambiar instantáneamente desde la configuración y se guarda automáticamente.
-
-## 📲 Progressive Web App (PWA)
-
-### ¿Qué es una PWA?
-Una PWA es una aplicación web que se puede instalar en tu dispositivo como si fuera una app nativa.
-
-### Instalación
-
-#### En Android (Chrome)
-1. Abre la aplicación en Chrome: https://notmati00.github.io/symmetry-pro
-2. Verás el prompt "Añadir a pantalla de inicio"
-3. Clic en "Añadir"
-4. ¡Listo! La app aparecerá como una app en tu teléfono
-
-#### En iOS (Safari)
-1. Abre la aplicación en Safari
-2. Clic en el botón "Compartir" (flecha hacia arriba)
-3. Clic en "Agregar a la pantalla de inicio"
-4. Ajusta la posición si lo deseas
-5. ¡Listo! La app estará en tu pantalla de inicio
-
-#### Características PWA
-- ✅ **Offline** - Funciona sin internet después de instalar
-- ✅ **Icono personalizado** - Ícono de Symmetry Pro en tu pantalla
-- ✅ **Pantalla completa** - Experiencia tipo app nativa
-- ✅ **Atajos** - Acceso rápido desde pantalla de inicio
-- ✅ **Notificaciones** - Capacidad de recibir notificaciones
-- ✅ **Funciona en Android e iOS** - Multiplataforma
-
-### Archivos PWA
-- `public/manifest.json` - Configuración de la PWA
-- `public/sw.js` - Service worker para offline
-- `public/icon-*.png` - Íconos en diferentes tamaños
-- `src/app/layout.tsx` - Meta tags y manifiesto
 
 ## 🎨 Diseño
 

@@ -1,0 +1,101 @@
+// Función para generar iconos simples con Canvas
+function generateIcon(size) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  // Configurar tamaño
+  const actualSize = size;
+  canvas.width = actualSize;
+  canvas.height = actualSize;
+
+  // Fondo oscuro (tema de la app)
+  const gradient = ctx.createRadialGradient(
+    actualSize / 2,
+    actualSize / 2,
+    0,
+    actualSize / 2,
+    actualSize / 2,
+    actualSize
+  );
+  gradient.addColorStop(0, '#2a2a2a');
+  gradient.addColorStop(1, '#1a1a1a');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, actualSize, actualSize);
+
+  // Silueta de cara simplificada
+  ctx.fillStyle = '#4a4a4a';
+  ctx.strokeStyle = '#6a6a6a';
+  ctx.lineWidth = actualSize / 80;
+
+  // Círculo de cara
+  const faceSize = actualSize * 0.5;
+  const faceX = actualSize / 2;
+  const faceY = actualSize * 0.35;
+
+  ctx.beginPath();
+  ctx.arc(faceX, faceY, faceSize / 2, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+
+  // Ojos
+  const eyeSize = faceSize * 0.12;
+  const eyeOffsetX = faceSize * 0.25;
+  const eyeY = faceY;
+
+  // Ojo izquierdo
+  ctx.beginPath();
+  ctx.arc(faceX - eyeOffsetX, eyeY, eyeSize / 2, 0, Math.PI * 2);
+  ctx.fillStyle = '#0a0a0a';
+  ctx.fill();
+
+  // Ojo derecho
+  ctx.beginPath();
+  ctx.arc(faceX + eyeOffsetX, eyeY, eyeSize / 2, 0, Math.PI * 2);
+  ctx.fillStyle = '#0a0a0a';
+  ctx.fill();
+
+  // Sombra de silueta corporal debajo
+  ctx.fillStyle = 'rgba(74, 74, 74, 0.3)';
+  ctx.beginPath();
+  ctx.ellipse(
+    actualSize / 2,
+    actualSize * 0.75,
+    actualSize * 0.35,
+    actualSize * 0.15,
+    0,
+    0,
+    Math.PI * 2
+  );
+  ctx.fill();
+
+  // Texto "SP" en el centro
+  ctx.fillStyle = '#ffffff';
+  ctx.font = `bold ${actualSize * 0.2}px Arial`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('SP', actualSize / 2, actualSize * 0.85);
+
+  return canvas.toDataURL('image/png');
+}
+
+// Generar iconos en diferentes tamaños
+const iconSizes = [72, 96, 128, 144, 152, 192, 384, 512];
+
+console.log('🎨 Generating icons...');
+
+iconSizes.forEach(size => {
+  const dataUrl = generateIcon(size);
+  const filename = `icon-${size}x${size}.png`;
+
+  // Descargar
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = dataUrl;
+  link.click();
+
+  console.log(`✅ Generated ${filename}`);
+});
+
+console.log('✅ Icon generation complete!');
+console.log('💾 Icons will be downloaded to your Downloads folder');
+console.log('📋 Move the downloaded icons to the /public folder');
